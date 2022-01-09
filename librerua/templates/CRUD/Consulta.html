@@ -1,0 +1,46 @@
+{% extends 'paginas/base.html' %}
+{% block titulo %}  Consulta {% endblock %} 
+{% block contenido %} 
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+<div class="card">
+    <div class="card-header">
+        Listar alumnos
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Alumnos</h4>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Grado</th>
+                    <th>Nombre</th>
+                    <th>FechaNacimiento</th>
+                    <th>Padre</th>
+                    <th>Madre</th>
+                    <th>Sección</th>
+                    <th>Ingreso</th>
+    
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for alumno in alms %}
+                <tr>
+                    <td>{{alumno.grado}}</td>
+                    <td>{{alumno.nombre}}</td>
+                    <td>{{alumno.nacimiento}}</td>
+                    <td>{{alumno.padre}}</td>
+                    <td>{{alumno.madre}}</td>
+                    <td>{{alumno.seccion}}</td>
+                    <td>{{alumno.ingreso}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+
+        {% endblock %}
